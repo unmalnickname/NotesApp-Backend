@@ -1,13 +1,17 @@
 const { Schema, model } = require("mongoose");
 
-const noteScheme = new Schema(
+const noteSchema = new Schema(
   {
     title: String,
     content: {
       type: String,
       require: true
     },
-    author: String
+    author: String,
+    date: {
+      type: Date,
+      default: Date.now
+    }
   },
   {
     timestamps: true
